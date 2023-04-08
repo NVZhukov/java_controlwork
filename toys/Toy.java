@@ -2,12 +2,11 @@ package control_work.toys;
 
 public abstract class Toy {
     protected int id;
-    protected String name;
-    protected static int toys_count;
+    protected static int toys_count = 1;
+    protected int chanceToLoss;
 
-    public Toy(int id, String name) {
-        this.id = id;
-        this.name = name;
+    public Toy() {
+        this.id = toys_count;
         toys_count ++;
     }
 
@@ -15,15 +14,13 @@ public abstract class Toy {
         return id;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public static int getCount() {
         return toys_count;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public abstract void getInfo();
+
+    public void setChanceToLoss(int chanceToLoss) {
+        this.chanceToLoss = chanceToLoss;
     }
 }

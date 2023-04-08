@@ -1,24 +1,20 @@
 package control_work.toys;
 
-public class Doll extends Toy {
-    private int doll_count = 1;
+public class Robot extends Toy{
     private String name;
     private int chanceToLoss;
+    private int robotCount = 1;
 
-    public Doll(String name) {
+    public Robot(String name) {
         super();
         this.name = name;
         chanceToLoss = 25;
-        doll_count++;
+        robotCount ++;
     }
 
     @Override
     public void getInfo() {
-        System.out.printf("Doll ID: " + super.getId() + " Name: " + name + " " + chanceToLoss +"\n");
-    }
-
-    public int getDoll_count() {
-        return doll_count;
+        System.out.printf("Robot ID: " + super.getId() + " Name: " + name + " " + chanceToLoss +"\n");
     }
 
     public void setChanceToLoss(int chanceToLoss) {
