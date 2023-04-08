@@ -1,27 +1,33 @@
 package control_work.toys;
 
 public class ToyCar extends Toy{
-    private int carCount = 1;
+    private static int carCount;
     private int chanceToLoss;
 
     public ToyCar() {
         super();
-        chanceToLoss = 30;
+        chanceToLoss = 38;
         carCount ++;
     }
 
     @Override
-    public void getInfo() {
-        System.out.printf("Toy car ID: " + super.getId() + " " + chanceToLoss +"\n");
+    public String getInfo() {
+        return "ToyCar ID: " + super.getId();
     }
 
-    public int getCarCount() {
+    @Override
+    public int getCountAnyOne() {
         return carCount;
     }
 
     public void setChanceToLoss(int chanceToLoss) {
-        if(chanceToLoss < 0 || chanceToLoss > 100) this.chanceToLoss = 25;
+        if(chanceToLoss < 0 || chanceToLoss > 50) this.chanceToLoss = 25;
         else this.chanceToLoss = chanceToLoss;
+    }
+
+    @Override
+    public int getChanceToLoss() {
+        return chanceToLoss;
     }
 
 
